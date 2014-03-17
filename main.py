@@ -8,11 +8,11 @@ from flask import Flask
 app = Flask(__name__)
 
 @app.route("/")
-def hello():
+def root():
     return "Annotator-store plugin http calls to neo4j"
 
 @app.route("/search")
-def hello():
+def search():
     return json.dumps([])
 
 if __name__ == "__main__":
