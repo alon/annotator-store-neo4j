@@ -1,14 +1,16 @@
 #!/usr/bin/python
 
+import os
 from OpenSSL import SSL
 import json
 
-from flask import Flask
+from flask import Flask, request, url_for
 
 ##### Globals
 use_https = False
 ####
 
+cwd = os.getcwd()
 app = Flask(__name__)
 app.debug = True
 
@@ -30,8 +32,7 @@ def search():
 
 @app.route("/annotations", methods=['GET', 'POST'])
 def create():
-    print("annotations")
-    #import pdb; pdb.set_trace()
+    print("annotations: %r" % request.data)
     return json.dumps([])
 
 if __name__ == "__main__":
