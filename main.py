@@ -16,9 +16,9 @@ app.debug = True
 
 class Store(object):
     def __init__(self):
-        self._annotations = ['ugabooga']
+        self._annotations = {}
     def get_all(self):
-        return self._annotations
+        return self._annotations.values()
 
 store = Store()
 
@@ -28,11 +28,14 @@ def root():
 
 @app.route("/search")
 def search():
-    return json.dumps(store.get_all())
+    return json.dumps({'rows': store.get_all()})
 
 @app.route("/annotations", methods=['GET', 'POST'])
 def create():
     print("annotations: %r" % request.data)
+    aid = len(store._annotations)
+    store._annotations[aid] = json.loads(request.data)
+    store._annotations[aid]['id'] = aid
     return json.dumps([])
 
 if __name__ == "__main__":
