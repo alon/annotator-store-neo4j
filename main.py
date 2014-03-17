@@ -42,10 +42,8 @@ def create():
 def update(aid):
     print("update: %r" % request.data)
     annotation = json.loads(request.data)
-    if not hasattr(annotation, 'id'):
-        print("missing id - just assuming it is not required there")
     store._annotations[aid] = annotation
-    # just make sure
+    # the annotation is lacking the id, just like the create case.
     annotation['id'] = aid
     return json.dumps([])
 
