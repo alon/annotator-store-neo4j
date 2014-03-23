@@ -4,10 +4,14 @@ import os
 from OpenSSL import SSL
 import json
 
+import urllib
+import urllib2
+
 from flask import Flask, request, url_for
 
 ##### Globals
 use_https = False
+rhizi_backend_url = 'http://127.0.0.1:3000'
 ####
 
 cwd = os.getcwd()
@@ -34,8 +38,23 @@ def search():
 def create():
     print("annotations: %r" % request.data)
     aid = len(store._annotations)
-    store._annotations[aid] = json.loads(request.data)
+
+    anno = json.loads(request.data)
+    store._annotations[aid] = anno
     store._annotations[aid]['id'] = aid
+
+    # post create node request to rhizi
+    post_dict = {'name':'test-node',
+                 'description': anno['text'],
+                 'quote': anno['quote'],  # actual text quoted by annotation
+                 'tags': anno['tags'],
+                 'url': None}
+
+    post_data = json.dumps(post_dict)
+    post_req = urllib2.Request(rhizi_backend_url + '/create_node', post_data)
+    post_req.add_header('Content-Type', 'application/json')
+    post_ret = urllib2.urlopen(post_req)
+
     return json.dumps([])
 
 @app.route("/annotations/<aid>", methods=['PUT'])
