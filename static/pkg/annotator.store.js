@@ -69,6 +69,7 @@ Annotator.Plugin.Store = (function() {
   }
 
   Store.prototype.create = function(annotation) {
+    annotation.uri = document.location.href;
     return this._apiRequest('create', annotation);
   };
 
