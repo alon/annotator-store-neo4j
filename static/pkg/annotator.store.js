@@ -8,6 +8,8 @@
 **
 ** Built at: 2014-03-07 15:34:19Z
 */
+var rhizi_url = "http://rhizi-demo.herokuapp.com/";
+
 !function(e){if("object"==typeof exports)module.exports=e();else if("function"==typeof define&&define.amd)define(e);else{var n;"undefined"!=typeof window?n=window:"undefined"!=typeof global?n=global:"undefined"!=typeof self&&(n=self),n.Annotator=e()}}(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"VH1sEA":[function(_dereq_,module,exports){
 (function (global){
 var Annotator, self, _ref;
@@ -100,13 +102,13 @@ Annotator.Plugin.Store = (function() {
                 //console.log(jQuery.parseJSON(text.responseText));
                 var id = $.parseJSON(xhr.responseText)['_id'];
                 jQuery(function() { setTimeout(function(){
-                  window.open('http://127.0.0.1:3000/?nodeID=' + id);
+                  window.open(rhizi_url + '?nodeID=' + id);
                   }, 2000)
                 });
             }
     };
     
-    request = $.ajax('http://127.0.0.1:3000/create_node', req_opts);
+    request = $.ajax(rhizi_url + 'create_node', req_opts);
     return request;
   }
   
