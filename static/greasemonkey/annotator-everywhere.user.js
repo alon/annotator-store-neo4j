@@ -3,15 +3,15 @@
 // @namespace   http://telavivmakers.org/AnnotatorGreasemonkey
 // @description run annotator bookmarklet everywhere (TODO: except those with ingrained annotator)
 // @version 1
-// @require https://raw.githubusercontent.com/alon/annotator-store-neo4j/master/static/lib/vendor/jquery.js
-// @require https://raw.githubusercontent.com/alon/annotator-store-neo4j/master/static/pkg/annotator.js
-// @require https://raw.githubusercontent.com/alon/annotator-store-neo4j/master/static/pkg/annotator.store.js
-// @require https://raw.githubusercontent.com/alon/annotator-store-neo4j/master/static/pkg/annotator.auth.js
-// @require https://raw.githubusercontent.com/alon/annotator-store-neo4j/master/static/pkg/annotator.permissions.js
-// @require https://raw.githubusercontent.com/alon/annotator-store-neo4j/master/static/pkg/annotator.tags.js
-// @require https://raw.githubusercontent.com/alon/annotator-store-neo4j/master/static/lib/vendor/showdown.js
-// @require https://raw.githubusercontent.com/alon/annotator-store-neo4j/master/static/pkg/annotator.markdown.js
-// @resource annotatorcss https://raw.githubusercontent.com/alon/annotator-store-neo4j/master/static/pkg/annotator.min.css
+// @require https://raw.githubusercontent.com/alon/annotator-store-neo4j/development/static/lib/vendor/jquery.js
+// @require https://raw.githubusercontent.com/alon/annotator-store-neo4j/development/static/pkg/annotator.js
+// @require https://raw.githubusercontent.com/alon/annotator-store-neo4j/development/static/pkg/annotator.store.js
+// @require https://raw.githubusercontent.com/alon/annotator-store-neo4j/development/static/pkg/annotator.auth.js
+// @require https://raw.githubusercontent.com/alon/annotator-store-neo4j/development/static/pkg/annotator.permissions.js
+// @require https://raw.githubusercontent.com/alon/annotator-store-neo4j/development/static/pkg/annotator.tags.js
+// @require https://raw.githubusercontent.com/alon/annotator-store-neo4j/development/static/lib/vendor/showdown.js
+// @require https://raw.githubusercontent.com/alon/annotator-store-neo4j/development/static/pkg/annotator.markdown.js
+// @resource annotatorcss https://raw.githubusercontent.com/alon/annotator-store-neo4j/development/static/pkg/annotator.min.css
 // @grant GM_getResourceText
 // @grant GM_addStyle
 // @grant GM_xmlhttpRequest
