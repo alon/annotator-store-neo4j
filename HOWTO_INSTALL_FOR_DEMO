@@ -1,3 +1,5 @@
+0. Launch a local rhizi on port 3000 (important! hardcoded in the greasemonkey script)
+
 1. Install greasemonkey 1.15:
  https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/?src=ss
 
@@ -7,6 +9,6 @@ Click through the wizard
 
 3. Enable popups:
 
-The first time	you use annotator you will have the popup blocked, you have to enable popups for localhost (i.e. greasemonkey) via the obvious dialog.
+This is the annoying bit - every site you annotate will try to popup rhizi, so you need to let it - would be nice to enable popups globaly
 
 4. Usage: go to any page, make sure greasemonkey is enabled (the monkey icon on the toolbar is not greyed out) and select some text, click the popup icon, enter a description, click save. after 2 seconds the rhizi window opens.
