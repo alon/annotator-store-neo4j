@@ -1,7 +1,7 @@
 1. Install greasemonkey 1.15:
- https://addons.mozilla.org/firefox/downloads/latest/748/addon-748-latest.xpi?src=ss
+ https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/?src=ss
 
-2. Click ____link_to_publicall_available_annotator-everywhere.user.js____
+2. Click https://github.com/alon/annotator-store-neo4j/raw/development/static/greasemonkey/annotator-everywhere.user.js
 
 Click through the wizard
 
