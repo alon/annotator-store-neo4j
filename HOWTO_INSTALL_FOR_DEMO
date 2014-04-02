@@ -1,0 +1,12 @@
+1. Install greasemonkey 1.15:
+ https://addons.mozilla.org/firefox/downloads/latest/748/addon-748-latest.xpi?src=ss
+
+2. Click ____link_to_publicall_available_annotator-everywhere.user.js____
+
+Click through the wizard
+
+3. Enable popups:
+
+The first time	you use annotator you will have the popup blocked, you have to enable popups for localhost (i.e. greasemonkey) via the obvious dialog.
+
+4. Usage: go to any page, make sure greasemonkey is enabled (the monkey icon on the toolbar is not greyed out) and select some text, click the popup icon, enter a description, click save. after 2 seconds the rhizi window opens.
