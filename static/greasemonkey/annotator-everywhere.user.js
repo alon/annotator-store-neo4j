@@ -109,7 +109,7 @@ jQuery.ajaxSettings.xhr = function(){return new GM_XHR();};
 jQuery(function($) {
     devStore = {
         type: Annotator.Plugin.Store,
-        prefix: 'http://localhost:5001',
+        prefix: 'http://188.226.195.83:5001',
         loadFromSearch: {
             uri: window.location
         },
