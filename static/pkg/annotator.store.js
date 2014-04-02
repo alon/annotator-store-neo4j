@@ -48,6 +48,19 @@ module.exports=_dereq_('VH1sEA');
 var Annotator,
   __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
+function spaces_to_underscores(txt) {
+    var result = '';
+    for (var i = 0 ; i < txt.length; ++i) {
+        var c = txt[i];
+        if (c == ' ') {
+            result += '_';
+        } else {
+            result += c;
+        }
+    }
+    return result;
+}
+
 Annotator = _dereq_('annotator');
 
 Annotator.Plugin.Store = (function() {
@@ -82,7 +95,7 @@ Annotator.Plugin.Store = (function() {
     
     // prep request data
     post_dict = {
-        'name': anno['text'],
+        'name': spaces_to_underscores(anno['text']),
         'description': anno['text'],
         'quote': anno['quote'],  // actual text quoted by annotation
         'tags': anno['tags'],
