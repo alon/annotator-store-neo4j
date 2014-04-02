@@ -68,18 +68,11 @@ Annotator.Plugin.Store = (function() {
     this.options = $.extend(true, {}, this.options, options);
   }
 
-  Store.prototype.common = function(annotation) {
-    jQuery(function() { setTimeout(function(){
-      window.open('http://127.0.0.1:3000/load');
-      }, 4000)
-    });
-  };
-  
   Store.prototype.create = function(anno) {
     // create function switch
 
-     this.create_rhizi(anno) // rhizi backend
-    //this.create_python(anno) // python backend
+     return this.create_rhizi(anno); // rhizi backend
+    //return this.create_python(anno); // python backend
   }
   
   Store.prototype.create_rhizi = function(anno) {
@@ -102,7 +95,15 @@ Annotator.Plugin.Store = (function() {
             dataType: "json",
             data: JSON.stringify(post_dict),
             contentType: "application/json; charset=utf-8",
-            error: this._onError
+            error: this._onError,
+            complete: function (xhr, text) {
+                //console.log(jQuery.parseJSON(text.responseText));
+                var id = $.parseJSON(xhr.responseText)['_id'];
+                jQuery(function() { setTimeout(function(){
+                  window.open('http://127.0.0.1:3000/?nodeID=' + id);
+                  }, 2000)
+                });
+            }
     };
     
     request = $.ajax('http://127.0.0.1:3000/create_node', req_opts);
