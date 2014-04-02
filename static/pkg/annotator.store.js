@@ -103,7 +103,7 @@ Annotator.Plugin.Store = (function() {
         'shouldLoad': 'true',
         // 'color' : '#444444',
         // 'size' : '0..100',
-        'url': ''}
+        'url': document.location.href}
 
     // prep request
     req_opts = {
